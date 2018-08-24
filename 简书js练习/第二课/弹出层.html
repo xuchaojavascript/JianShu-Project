@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>弹出层效果</title>
+    <style>
+        html,body{
+            height: 100%;
+            overflow: hidden;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #box{
+            position: absolute;
+            display: none;
+            width: 100%;
+            height: 100%;
+            background-color: #ccc;
+        }
+        #btnDiv{
+            text-align: center;
+        }
+        #box2{
+            position: absolute;
+            display: none;
+            top: 50%;left: 50%;
+            transform: translate(-50%,-50%);
+            width: 400px;
+            height: 200px;
+            border: 4px solid #f90;
+            background-color: #fff;
+        }
+        #box2 div:first-child{
+            height: 40px;
+            border-bottom: 4px solid #f90;
+            background-color: #fc0;
+        }
+        #close{
+            float: right;
+            width: 15px;
+            height: 15px;
+            margin: 17.5px 5px;
+            background-color: #fff;
+            color: #fc0;
+            line-height: 15px;
+            text-align: center;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+    <div id="btnDiv"><button id="btn">弹出层</button></div>
+    <div id="box2">
+        <div><span id="close">×</span></div>
+        <div></div>
+    </div>
+    <script>
+        let box = document.getElementById('box'),
+            btn = document.getElementById('btn'),
+            box2 = document.getElementById('box2');
+            close = document.getElementById('close');
+        btn.onclick = function(){
+            box.style.display = "block";
+            box2.style.display = "block";
+        }
+        close.onclick = function(){
+            box.style.display = "none";
+            box2.style.display = "none";
+        }
+    </script>
+</body>
+</html>

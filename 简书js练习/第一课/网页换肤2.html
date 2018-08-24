@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>网页换肤2</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<style>
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	#warp{
+		width: 500px;
+		margin: 20px auto;
+	}
+	#warp .box{
+		float: left;
+		width: 5px;
+		height: 5px;
+		margin-bottom: 10px;
+	}
+	#warp div:first-child{
+		background-color: #f00;
+		border: 5px solid #f00;
+	}
+	#warp div+div{
+		margin-left: 10px;
+	}
+	#warp div:nth-child(2){
+		background-color: #008000;
+		border: 5px solid #008000;
+	}
+	#warp div:nth-child(3){
+		background-color: #000;
+		border: 5px solid #000;
+	}
+	ul{
+		list-style-type: none;
+		display: flex;
+		width: 500px;
+		height: 30px;		
+		border: 1px solid #fff;
+	}
+	li{
+		flex: auto;
+		margin-left: 1px;
+		
+		line-height: 30px;
+		text-align: center;
+		font-size: 14px;
+		
+	}
+	a{
+		color: #fff;
+		text-decoration: none;
+	}
+	a:hover{
+		text-decoration: underline;
+	}
+</style>
+<style>
+	body{		
+		background-color: #A3C5A8;
+	}
+	#warp div:nth-child(2){
+		background-color: #fff;
+		border: 5px solid #008000;
+	}
+	li{
+		background-color: #008000;
+	}	
+</style>
+<style>
+	body{		
+		background-color: #fdd;
+	}
+	#warp div:first-child{
+		background-color: #fff;
+		border: 5px solid #f00;
+	}
+	li{
+		background-color: #f00;
+	}	
+</style>
+<style>
+	body{		
+		background-color: #ccc;
+	}
+	#warp div:nth-child(3){
+		background-color: #fff;
+		border: 5px solid #000;
+	}
+	li{
+		background-color: #000;
+	}	
+</style>
+</head>
+<body>
+    <div id="warp">
+    	<div class="box"></div>
+    	<div class="box"></div>
+    	<div class="box"></div>
+    	<ul>
+    		<li><a href="">新闻</a></li>
+    		<li><a href="">娱乐</a></li>
+    		<li><a href="">体育</a></li>
+    		<li><a href="">电影</a></li>
+    		<li><a href="">音乐</a></li>
+    		<li><a href="">旅游</a></li>
+    	</ul>
+    </div>
+
+    <script>
+    	var ss = document.styleSheets;
+    		ss[1].disabled = false;
+	    	ss[2].disabled = true;
+	    	ss[3].disabled = true;
+    	let boxArr = document.getElementsByClassName('box');
+    	boxArr[0].onclick = function(){
+    		ss[1].disabled = true;
+	    	ss[2].disabled = false;
+	    	ss[3].disabled = true;
+    	}
+    	boxArr[1].onclick = function(){
+    		ss[1].disabled = false;
+	    	ss[2].disabled = true;
+	    	ss[3].disabled = true;
+    	}
+    	boxArr[2].onclick = function(){
+    		ss[1].disabled = true;
+	    	ss[2].disabled = true;
+	    	ss[3].disabled = false;
+    	}
+    	
+    </script>
+</body>
+</html>

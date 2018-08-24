@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>控制div属性</title>
+	<style>
+		div{
+			text-align: center;
+		}
+		#box{
+			width: 100px;
+			height: 100px;
+			margin: 20px auto;
+			background-color: #000;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<button>变宽</button>
+		<button>变高</button>
+		<button>变色</button>
+		<button>隐藏</button>
+		<button>重置</button>
+	</div>
+	<div id="box"></div>
+	<script>
+		let box = document.getElementById('box');
+		let arrBtn = document.getElementsByTagName('button');
+		arrBtn[0].onclick = function(){
+			box.style.width = '200px';
+		}
+		arrBtn[1].onclick = function(){
+			box.style.height = '200px';
+		}
+		arrBtn[2].onclick = function(){
+			box.style.backgroundColor = 'red';
+		}
+		arrBtn[3].onclick = function(){
+			box.style.display = 'none'; 
+		}
+		arrBtn[4].onclick = function(){
+			box.style.cssText = 'width: 100px;height: 100px;background-color: #000;';
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>百度输入法</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 70px;
+            margin: 20px auto;
+        }
+        ul{
+            display: none;
+            width: 70px;
+            margin: 5px auto; 
+            list-style-type: none;
+            border: 1px solid blue;
+        }
+        ul li:last-child{            
+            border-top: 1px solid blue;
+        }
+        li a{
+            display: block;
+            color: blue;
+            font-size: 12px;
+            text-align: left;
+            padding: 5px 0;
+            text-decoration: none;
+        }
+        li:hover{
+            background-color: skyblue;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <button id="btn">输入法</button>
+        <ul id="list">
+            <li><a href="#">手写</a></li>
+            <li><a href="#">拼音</a></li>
+            <li id="close"><a href="">关闭</a></li>
+        </ul>
+    </div>
+    <script>
+        let btn = document.getElementById('btn'),
+            list = document.getElementById('list'),
+            close = document.getElementById('close');
+            message = false;
+        btn.onclick = function(){
+            if(message){
+                list.style.display = 'none';
+                message = false;
+            }else{
+                list.style.display = 'block';
+                message = true;
+            }
+        }
+        close.onclick = function(){
+            list.style.display = 'none';
+            message = false;
+        }
+    </script>
+</body>
+</html>

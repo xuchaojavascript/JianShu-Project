@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>鼠标移入移出</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<style>
+	div{
+		width: 170px;
+		height: 170px;
+		background-color: #000;
+		margin: 20px auto;
+		padding: 10px;
+		border: 10px solid #000;
+		color: #fff;
+		font-size: 12px;
+		cursor: crosshair;
+	}
+</style>
+</head>
+<body>
+    <div id="box">
+    	鼠标移入改变样式，鼠标移出恢复。
+    </div>
+    <script>
+    	let box = document.getElementById('box');
+    	box.onmouseenter = function(){
+    		box.style.cssText = 'background-color: #f0f0f0;border: 10px solid #f00;color: #f00;'
+    	}
+    	box.onmouseleave = function(){
+    		box.style.cssText = 'background-color: #000;border: 10px solid #000;color: #fff;'
+    	}
+    </script>
+</body>
+</html>
